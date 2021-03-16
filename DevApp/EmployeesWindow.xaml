@@ -1,0 +1,44 @@
+﻿<Window x:Class="DevApp.EmployeesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Сотрудники" Height="450" Width="700" Closing="Window_Closing">
+    <Grid Grid.Column="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="580"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <!--Таблица, выводящая на экран всех сотрудников-->
+        <DataGrid Grid.Column="0" Grid.Row="1" Name="DG_employees" ItemsSource="{Binding}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn SortMemberPath="" Header="ID" Binding="{Binding Id}" Width="40" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="100"/>
+                <DataGridTextColumn Header="Фамилия"  Binding="{Binding SecondName}" Width="100"/>
+                <DataGridTextColumn Header="Возраст"  Binding="{Binding Age}" Width="60"/>
+                <DataGridTextColumn Header="Департамент"  Binding="{Binding Department}" Width="100"/>
+                <DataGridTextColumn Header="Зарплата"  Binding="{Binding Salary}" Width="100"/>
+                <DataGridTextColumn Header="Проекты"  Binding="{Binding NumbOfProjects}" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!--Добавление нового сотрудника-->
+        <Button Content="Добавить" Grid.Row="1" Grid.Column="1" Margin="10"
+            Height="30" VerticalAlignment="Top"  MinWidth="80" MaxWidth="100" IsDefault="True" Click="Add_button" />
+        
+        <!--Удаление сотрудника(ов)-->
+        <Button Content="Удалить" Grid.Column="1" Margin="10,45,10.333,0"
+            Height="30" VerticalAlignment="Top"  MinWidth="80" MaxWidth="100" IsDefault="True" Click="Delete_button" />
+        
+        <!--Добавление большого числа сотрудников-->
+        <Button Content="Тест тест тест&#xD;&#xA;(осторожно)" Grid.Column="1" Margin="10,381,10.333,0"
+            Height="30" VerticalAlignment="Top"  MinWidth="80" MaxWidth="100" IsDefault="True" Click="Test" FontSize="10" />
+        
+        <!--Импорт данных в таблицу из выбранного места-->
+        <Button Content="Импорт" Grid.Column="1" Margin="10,346,10.333,0"
+            Height="30" VerticalAlignment="Top"  MinWidth="80" MaxWidth="100" IsDefault="True" Click="Import_Button" />
+    </Grid>
+    
+    
+</Window>

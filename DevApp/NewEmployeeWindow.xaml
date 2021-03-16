@@ -1,0 +1,30 @@
+﻿<Window x:Class="DevApp.NewEmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:DevApp"
+        mc:Ignorable="d"
+        Title="Добавление нового сотрудника" Height="330" Width="280">
+    <Grid>
+        <!--Кнопка подтверждения действия-->
+        <Button Content="ОК" HorizontalAlignment="Left" Margin="180,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" IsDefault="True"/>
+        <!--Ввод имени сотрудника-->
+        <TextBlock HorizontalAlignment="Left" Margin="12,11,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Width="243" FontWeight="Bold"/>
+        <TextBox Name ="firstName" HorizontalAlignment="Left" Height="23" Margin="12,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243"/>
+        <!--Ввод фамилии сотрудника-->
+        <TextBlock HorizontalAlignment="Left" Margin="12,61,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Width="243" FontWeight="Bold"/>
+        <TextBox Name ="secondName" HorizontalAlignment="Left" Height="23" Margin="12,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243"/>
+        <!--Ввод возраста сотрудника-->
+        <TextBlock HorizontalAlignment="Left" Margin="12,111,0,0" TextWrapping="Wrap" Text="Возраст" VerticalAlignment="Top" Width="243" FontWeight="Bold"/>
+        <TextBox Text ="24" Name ="age" DataObject.Pasting="OnPasting" HorizontalAlignment="Left" Height="23" Margin="12,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" PreviewTextInput="Age_PreviewTextInput"/>
+        <!--Ввод департамента, к которому относится сотрудник-->
+        <TextBlock HorizontalAlignment="Left" Margin="12,163,0,0" TextWrapping="Wrap" Text="Департамент" VerticalAlignment="Top" Width="243" FontWeight="Bold"/>
+        <TextBox Name ="department" HorizontalAlignment="Left" Height="23" Margin="12,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243"/>
+        <!--Ввод зарплата сотрудника-->
+        <TextBlock HorizontalAlignment="Left" Margin="12,215,0,0" TextWrapping="Wrap" Text="Зарплата" VerticalAlignment="Top" Width="243" FontWeight="Bold"/>
+        <TextBox Text ="30000" Name ="salary" DataObject.Pasting="OnPasting" HorizontalAlignment="Left" Height="23" Margin="12,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" PreviewTextInput="Salary_PreviewTextInput"/>
+
+    </Grid>
+</Window>
